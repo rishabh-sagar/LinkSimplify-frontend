@@ -2,7 +2,7 @@
 import axios from 'axios';
 
 const instance = axios.create({
-  baseURL: 'http://localhost:4000', // Replace with your API server URL
+  baseURL: 'https://linksimplify-backend.azurewebsites.net', // Replace with your API server URL
   timeout: 0, // Adjust timeout as needed
 });
 

@@ -9,7 +9,7 @@ const Register = () => {
   const handleRegister = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:4000/auth/register', { username, password });
+      await axios.post('https://linksimplify-backend.azurewebsites.net/auth/register', { username, password });
       // Handle success, show a message or redirect
       navigate("/r/login")
     } catch (error) {
