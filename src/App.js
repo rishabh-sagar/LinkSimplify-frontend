@@ -1,24 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+// App.js
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+
+import Layout from './components/Layout';
+import Login from './components/Auth/Login';
+import Register from './components/Auth/Register';
+import LinkList from './components/Link/LinkList';
+import LinkForm from './components/Link/LinkForm';
+import RedirectPage from './components/RedirectPage'; // Add this import
+import Dashboard from './components/Link/combined';
+import NotFound from './components/Link/pagenotfound';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    
+      <Router>
+    
+          <Routes>
+          <Route path="/" element={<Login/>} />
+            <Route path="/:shortUrl" element={<RedirectPage/>} />
+            <Route path="/r/login" element={<Login/>} />
+            <Route path="/r/register" element={<Register/>} />
+            <Route path="/r/links" element={<LinkList/>} />
+            <Route path="/r/create-link" element={<LinkForm/>} />
+            <Route path="/r/dashboard" element={<Dashboard/>} />
+            <Route path="/r/404" element={<NotFound/>} />
+          </Routes>
+    
+      </Router>
+  
   );
 }
 
