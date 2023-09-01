@@ -96,7 +96,7 @@ const Dashboard = () => {
   const copyToClipboard = async (shortUrl) => {
     try {
       // Copy the short link to the clipboard
-      await navigator.clipboard.writeText(`http://localhost:3000/${shortUrl}`);
+      await navigator.clipboard.writeText(`https://linksimplify.netlify.app/${shortUrl}`);
       alert('Short link copied to clipboard');
     } catch (error) {
       console.error('Copy to clipboard failed: ', error);
@@ -115,7 +115,7 @@ const Dashboard = () => {
           {links.map((link) => (
             <div key={link._id} className="mb-4 border rounded-md p-4 space-y-2">
               <p className="text-lg bg-red-200  rounded-lg p-2">Original URL: <a href={link.originalUrl}>{link.originalUrl}</a></p>
-              <p className="text-lg bg-orange-200  rounded-lg p-2">Short URL:<a href={"http://localhost:3000/"+link.shortUrl}> {"http://localhost:3000/"+link.shortUrl}</a></p>
+              <p className="text-lg bg-orange-200  rounded-lg p-2">Short URL:<a href={"https://linksimplify.netlify.app/"+link.shortUrl}> {"https://linksimplify.netlify.app/"+link.shortUrl}</a></p>
               <p className="text-lg bg-lime-300  rounded-lg p-2">Total Hits: {link.hits/2}</p>
               {updatingLink === link.shortUrl ? (
                 <div>
