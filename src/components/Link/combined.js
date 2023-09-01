@@ -116,7 +116,7 @@ const Dashboard = () => {
             <div key={link._id} className="mb-4 border rounded-md p-4 space-y-2">
               <p className="text-lg bg-red-200  rounded-lg p-2">Original URL: <a href={link.originalUrl}>{link.originalUrl}</a></p>
               <p className="text-lg bg-orange-200  rounded-lg p-2">Short URL:<a href={"https://linksimplify.netlify.app/"+link.shortUrl}> {"https://linksimplify.netlify.app/"+link.shortUrl}</a></p>
-              <p className="text-lg bg-lime-300  rounded-lg p-2">Total Hits: {link.hits/2}</p>
+              <p className="text-lg bg-lime-300  rounded-lg p-2">Total Hits: {link.hits}</p>
               {updatingLink === link.shortUrl ? (
                 <div>
                  <input
